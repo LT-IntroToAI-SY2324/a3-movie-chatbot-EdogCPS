@@ -27,7 +27,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "micheal caine",
             #actors/actresses
         ]
-    )
+    ),
     (
         "amarcord",  # title
         "federico fellini",  # director
