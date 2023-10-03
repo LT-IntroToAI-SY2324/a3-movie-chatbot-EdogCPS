@@ -234,6 +234,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("who acted in %"), actors_by_title),
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
+    (str.split("What movies did % act in"), title_by_actor),
     (["bye"], bye_action),
 ]
 
@@ -273,6 +274,8 @@ def query_loop() -> None:
         try:
             print()
             query = input("Your query? ").replace("?", "").lower().split()
+            if (query == "q"):
+                break
             answers = search_pa_list(query)
             for ans in answers:
                 print(ans)
@@ -286,7 +289,7 @@ def query_loop() -> None:
 # uncomment the following line once you've written all of your code and are ready to try
 # it out. Before running the following line, you should make sure that your code passes
 # the existing asserts.
-query_loop()
+# query_loop()
 
 if __name__ == "__main__":
     assert isinstance(title_by_year(["1974"]), list), "title_by_year not returning a list"
@@ -342,5 +345,8 @@ if __name__ == "__main__":
     assert sorted(
         search_pa_list(["what", "movies", "were", "made", "in", "2020"])
     ) == sorted(["No answers"]), "failed search_pa_list test 3"
-
+    assert sorted(
+        search_pa_list(["What", "movies", "did", "mathew mcconaughey", "act", "in"]) ==
+        sorted(["interstellar"])
+    ), "failed search_pa_list test 3"
     # print("All tests passed!")

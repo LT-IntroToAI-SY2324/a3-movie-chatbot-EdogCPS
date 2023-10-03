@@ -14,6 +14,21 @@ from typing import List, Tuple
 
 movie_db: List[Tuple[str, str, int, List[str]]] = [
     (
+        "interstellar", #title
+        "christoher nolan", #director
+        2014, # year
+        [
+            "mathew mcconaughey",
+            "jessica chastain",
+            "anne hathaway",
+            "mackenzie foy",
+            "timothee chalamet",
+            "matt damon",
+            "micheal caine",
+            #actors/actresses
+        ]
+    )
+    (
         "amarcord",  # title
         "federico fellini",  # director
         1974,  # year
