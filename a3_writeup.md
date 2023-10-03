@@ -23,6 +23,6 @@ Assignment 3 is all about creating this natural language query system.  In order
 
 
 6. Did you write a new assert for your pattern action?
-
+    Yes, It checked my new movie and the new phrasing for the pa_list
 
 
